@@ -1,0 +1,17 @@
+{
+  "name": "image-size-tools",
+  "version": "0.1.0",
+  "description": "Read the pixel width and height of an image from its header bytes, without decoding the pixels.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {}
+}
