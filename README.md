@@ -49,3 +49,10 @@ Truncated headers throw `RangeError`, and passing something that is not a byte c
 - `parseGifSize(bytes)` — parse a logical screen descriptor.
 - `parseJpegSize(bytes)` — walk markers to the first frame header.
 - `parseBmpSize(bytes)` — parse a `BITMAPINFOHEADER`-style header; a negative stored height (top-down bitmap) is reported as a positive number.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
